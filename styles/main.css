@@ -1,0 +1,210 @@
+:root {
+    --color-cashmere: #e9cdab;
+    --border-primary: 3px solid #554a3b;
+    --border-primary--hover: border: 3px solid #a79173;
+}
+
+
+/** GLOBAL **/
+body {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-transform: uppercase;
+}
+
+a, button, select {
+    cursor: pointer;
+}
+
+.header>*, .main>*, .footer>* {
+    padding: 0 1em;
+}
+
+.header-txt, .footer-txt {
+    color: #2c2a2a;
+    padding: 1.4em 1em;
+    text-transform: uppercase;
+}
+
+/** HEADER **/
+.header {
+    position: absolute;
+    min-height: 50px;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 4px 45px 0 rgba(0, 0, 0, .25);
+    background-color: var(--color-cashmere);
+}
+
+.header-txt {
+    font-weight: 700;
+    font-size: 1.5em;
+    text-shadow: 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+
+/** GAME **/
+.main {
+    background-image: url('/assets/ancient-paper.jpg');
+    background-size: cover;
+    min-height: calc(100vh - 50px);
+    height: max-content;
+}
+
+.game__option {
+    display: flex;
+    align-items: center;
+}
+
+.game-option>dt {
+    padding: 0 0 0 15px;
+}
+
+.game__screen-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2em 0;
+    padding: 8em 0 2em;
+}
+
+.game__item-container, .game__options {
+    width: 100%;
+    max-width: 1400px;
+    display: flex;
+    gap: 20px;
+}
+
+.game__options {
+    justify-content: space-between;
+}
+
+.game__item-container {
+    justify-content: space-evenly;
+}
+
+.game__item, .restart-btn, #rounds {
+    border-radius: 20px;
+    border: 3px solid #554a3b;
+    background-color: var(--color-cashmere);
+
+}
+
+.game__item:hover, .restart-btn:hover, #rounds:hover {
+    border: 3px solid #a79173;
+    opacity: .8;
+}
+
+.game__item>img {
+    width: 100%;
+}
+
+.restart-btn, #rounds {
+    padding: 5px 10px;
+}
+
+.restart-btn{
+    font-size: 1.5em;
+}
+
+.game__option-cat-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .8em 2em;
+}
+
+.game__options--mobile {
+    display: none;
+}
+
+/** OUTCOME **/
+.outcome__list-wrapper {
+    width: 100%;
+}
+
+.outcome-txt {
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 600;
+    padding: 1em .2em;
+}
+.outcome__list-wrapper--mobile{
+    display: none;
+    width: 100%;
+}
+
+/** FOOTER **/
+.footer {
+    min-height: 50px;
+    background-color: var(--color-cashmere);
+}
+
+.footer-txt {
+    text-align: center;
+}
+
+.author {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.author:hover {
+    text-decoration: underline;
+}
+
+
+/*** BREAKPOINT ***/
+@media screen and (max-width: 768px) {
+    .game__item-container {
+        flex-wrap: wrap;
+    }
+
+    .game__option {
+        flex-direction: column;
+    }
+
+    .game__item {
+        width: 30%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .header-txt {
+        text-align: center;
+    }
+
+    .game__item {
+        width: 38%;
+    }
+
+    .game__option {
+        flex-direction: row;
+    }
+
+    .game__options--tablet {
+        display: none;
+    }
+
+    .game__options--mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .game__item {
+        width: 90%;
+    }
+    .game__options{
+        gap: 5px;
+    }
+    .outcome__list-wrapper--mobile{
+        display: initial;
+    }
+    .outcome__list-wrapper{
+        display: none;
+    }
+}
