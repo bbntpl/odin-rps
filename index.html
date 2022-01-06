@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles/reset.css" />
@@ -8,7 +7,6 @@
     <link rel=icon href=assets/favicon.png>
     <title>Rock, Paper and Scissors</title>
 </head>
-
 <body>
     <header class="header">
         <p class="header-txt">
@@ -16,55 +14,34 @@
         </p>
     </header>
     <main class="main">
-        <div class="game__screen-wrapper">
-            <div class="game__options game__options--tablet">
-                <dl class="game__option">
-                    <dd>
-                        rounds:
-                    </dd>
-                    <dt>
-                        <select id="rounds" name="rounds">
-                            <option value="3">3</option>
-                            <option value="5">5</option>
-                            <option value="7">7</option>
-                            <option value="9">9</option>
-                        </select>
-                    </dt>
-                </dl>
-                <dl class="game__option">
-                    <dd class="player__label">
-                        Player:
-                    </dd>
-                    <dt class="player__score">
-                    </dt>
-                </dl>
-                <dl class="game__option">
-                    <dd id="player-score" class="player__label">
-                        Computer:
-                    </dd>
-                    <dt id="computer-score" class="player__score">
-                    </dt>
-                </dl>
-                <dl class="game__option">
-                    <dd></dd>
-                    <dt>
-                        <button class="restart-btn">&#8635;</button>
-                    </dt>
-                </dl>
-            </div>
-            <div class="game__options--mobile">
-                <div class="game__option-cat-wrapper">
-                    <dl class="game__option">
+        <div class="o-wrapper">
+            <div class="game__screen-wrapper">
+                <div class="game__options game__options--tablet">
+                    <dl class="game__option game__total-rounds">
                         <dd>
                             rounds:
                         </dd>
                         <dt>
-                            <select id="rounds" name="rounds">
+                            <select class="rounds" name="rounds">
                                 <option value="3">3</option>
                                 <option value="5">5</option>
                                 <option value="7">7</option>
                                 <option value="9">9</option>
                             </select>
+                        </dt>
+                    </dl>
+                    <dl class="game__option">
+                        <dd class="player__label">
+                            Player:
+                        </dd>
+                        <dt class="player-score">
+                        </dt>
+                    </dl>
+                    <dl class="game__option">
+                        <dd class="player__label">
+                            Computer:
+                        </dd>
+                        <dt class="computer-score">
                         </dt>
                     </dl>
                     <dl class="game__option">
@@ -74,36 +51,62 @@
                         </dt>
                     </dl>
                 </div>
-                <div class="game__option-cat-wrapper"
-                    <dl class="game__option">
-                        <dd class="player__label">
-                            Player:
-                        </dd>
-                        <dt class="player__score">
-                        </dt>
-                    </dl>
-                    <dl class="game__option">
-                        <dd id="player-score" class="player__label">
-                            Computer:
-                        </dd>
-                        <dt id="computer-score" class="player__score">
-                        </dt>
-                    </dl>
+                <div class="game__options--mobile">
+                    <div class="game__option-cat-wrapper">
+                        <dl class="game__option game__total-rounds">
+                            <dd>
+                                rounds:
+                            </dd>
+                            <dt>
+                                <select class="rounds" name="rounds">
+                                    <option value="3">3</option>
+                                    <option value="5">5</option>
+                                    <option value="7">7</option>
+                                    <option value="9">9</option>
+                                </select>
+                            </dt>
+                        </dl>
+                        <dl class="game__option">
+                            <dd></dd>
+                            <dt>
+                                <button class="restart-btn">&#8635;</button>
+                            </dt>
+                        </dl>
+                    </div>
+                    <div class="game__option-cat-wrapper">
+                        <dl class="game__option">
+                            <dd class="player__label">
+                                Player:
+                            </dd>
+                            <dt class="player-score">
+                            </dt>
+                        </dl>
+                        <dl class="game__option computer-score-reverse-wrapper">
+                            <dd id="player-score" class="player__label">
+                                :Computer
+                            </dd>
+                            <dt class="computer-score">
+                            </dt>
+                        </dl>
+                    </div>
+                    <div class="outcome__list-wrapper--mobile">
+                        <p class="outcome-txt">Choose a form</p>
+                    </div>
                 </div>
-                <div class="outcome__list-wrapper--mobile">
-                    <p class="outcome-txt">Choose a form</p>
+                <div class="game__item-container">
+                    <a class="game__item" id="rock">
+                        <img src="assets/rock.png" />
+                    </a>
+                    <a class="game__item" id="paper"><img src="assets/paper.png" /></a>
+                    <a class="game__item" id="scissors"><img src="assets/scissors.png" /></a>
+                    <div class="disable-overlay">
+                        <h2 class="end-text">sd</h2>
+                    </div>
                 </div>
             </div>
-            <div class="game__item-container">
-                <a class="game__item" id="rock">
-                    <img src="assets/rock.png" />
-                </a>
-                <a class="game__item" id="paper"><img src="assets/paper.png" /></a>
-                <a class="game__item" id="scissors"><img src="assets/scissors.png" /></a>
+            <div class="outcome__list-wrapper">
+                <p class="outcome-txt">Choose a form</p>
             </div>
-        </div>
-        <div class="outcome__list-wrapper">
-            <p class="outcome-txt">Choose a form</p>
         </div>
     </main>
     <footer class="footer">
@@ -111,5 +114,4 @@
     </footer>
 </body>
 <script src="index.js"></script>
-
 </html>
