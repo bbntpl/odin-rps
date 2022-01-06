@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <link rel=icon href=assets/favicon.png>
+    <title>Rock, Paper and Scissors</title>
+</head>
+
+<body>
+    <header class="header">
+        <p class="header-txt">
+            Rock, Paper and Scissors
+        </p>
+    </header>
+    <main class="main">
+        <div class="game__screen-wrapper">
+            <div class="game__options game__options--tablet">
+                <dl class="game__option">
+                    <dd>
+                        rounds:
+                    </dd>
+                    <dt>
+                        <select id="rounds" name="rounds">
+                            <option value="3">3</option>
+                            <option value="5">5</option>
+                            <option value="7">7</option>
+                            <option value="9">9</option>
+                        </select>
+                    </dt>
+                </dl>
+                <dl class="game__option">
+                    <dd class="player__label">
+                        Player:
+                    </dd>
+                    <dt class="player__score">
+                    </dt>
+                </dl>
+                <dl class="game__option">
+                    <dd id="player-score" class="player__label">
+                        Computer:
+                    </dd>
+                    <dt id="computer-score" class="player__score">
+                    </dt>
+                </dl>
+                <dl class="game__option">
+                    <dd></dd>
+                    <dt>
+                        <button class="restart-btn">&#8635;</button>
+                    </dt>
+                </dl>
+            </div>
+            <div class="game__options--mobile">
+                <div class="game__option-cat-wrapper">
+                    <dl class="game__option">
+                        <dd>
+                            rounds:
+                        </dd>
+                        <dt>
+                            <select id="rounds" name="rounds">
+                                <option value="3">3</option>
+                                <option value="5">5</option>
+                                <option value="7">7</option>
+                                <option value="9">9</option>
+                            </select>
+                        </dt>
+                    </dl>
+                    <dl class="game__option">
+                        <dd></dd>
+                        <dt>
+                            <button class="restart-btn">&#8635;</button>
+                        </dt>
+                    </dl>
+                </div>
+                <div class="game__option-cat-wrapper"
+                    <dl class="game__option">
+                        <dd class="player__label">
+                            Player:
+                        </dd>
+                        <dt class="player__score">
+                        </dt>
+                    </dl>
+                    <dl class="game__option">
+                        <dd id="player-score" class="player__label">
+                            Computer:
+                        </dd>
+                        <dt id="computer-score" class="player__score">
+                        </dt>
+                    </dl>
+                </div>
+                <div class="outcome__list-wrapper--mobile">
+                    <p class="outcome-txt">Choose a form</p>
+                </div>
+            </div>
+            <div class="game__item-container">
+                <a class="game__item" id="rock">
+                    <img src="assets/rock.png" />
+                </a>
+                <a class="game__item" id="paper"><img src="assets/paper.png" /></a>
+                <a class="game__item" id="scissors"><img src="assets/scissors.png" /></a>
+            </div>
+        </div>
+        <div class="outcome__list-wrapper">
+            <p class="outcome-txt">Choose a form</p>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer-txt">Copyright &copy; <a class="author">B.B. Antipolo 2022</a></p>
+    </footer>
+</body>
+<script src="index.js"></script>
+
+</html>
