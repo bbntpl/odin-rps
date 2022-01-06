@@ -76,35 +76,36 @@ a, button, select {
     gap: 20px;
 }
 
-.game__options {
+.game__options--tablet {
     justify-content: space-between;
 }
 
 .game__item-container {
+    position: relative;
     justify-content: space-evenly;
 }
 
-.game__item, .restart-btn, #rounds {
+.game__item, .restart-btn, .rounds {
     border-radius: 20px;
     border: 3px solid #554a3b;
     background-color: var(--color-cashmere);
 
 }
 
-.game__item:hover, .restart-btn:hover, #rounds:hover {
-    border: 3px solid #a79173;
-    opacity: .8;
+.game__item:hover, .restart-btn:hover, .rounds:hover {
+    border: 3px solid #9b876a;
+    opacity: .6;
 }
 
 .game__item>img {
     width: 100%;
 }
 
-.restart-btn, #rounds {
+.restart-btn, .rounds {
     padding: 5px 10px;
 }
 
-.restart-btn{
+.restart-btn {
     font-size: 1.5em;
 }
 
@@ -119,6 +120,22 @@ a, button, select {
     display: none;
 }
 
+.disable-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .56);
+}
+
+.end-text {
+    font-size: clamp(1.4rem, 2vw, 3rem);
+    color: #f3e5e5;
+}
+
 /** OUTCOME **/
 .outcome__list-wrapper {
     width: 100%;
@@ -130,9 +147,14 @@ a, button, select {
     font-weight: 600;
     padding: 1em .2em;
 }
-.outcome__list-wrapper--mobile{
+
+.outcome__list-wrapper--mobile {
     display: none;
     width: 100%;
+}
+
+.computer-score-reverse-wrapper {
+    flex-direction: row-reverse
 }
 
 /** FOOTER **/
@@ -156,6 +178,12 @@ a, button, select {
 
 
 /*** BREAKPOINT ***/
+@media screen and (min-width: 768px) {
+    .o-wrapper {
+        padding: 0 1em;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .game__item-container {
         flex-wrap: wrap;
@@ -198,13 +226,12 @@ a, button, select {
     .game__item {
         width: 90%;
     }
-    .game__options{
-        gap: 5px;
-    }
-    .outcome__list-wrapper--mobile{
+
+    .outcome__list-wrapper--mobile {
         display: initial;
     }
-    .outcome__list-wrapper{
+
+    .outcome__list-wrapper {
         display: none;
     }
 }
