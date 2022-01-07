@@ -1,10 +1,10 @@
 'use strict'
 //HTML elements
 //single inputs
-const restartBtn = document.querySelector('.restart-btn');
 const roundBtn = document.querySelector('.round-btn');
 
 //array of classes
+const restartBtns = document.querySelectorAll('.restart-btn');
 const outcomeTxt = document.querySelectorAll('.outcome-txt');
 const optionButtons = document.querySelectorAll('.game__item');
 const roundSelections = document.querySelectorAll('.rounds');
@@ -79,8 +79,8 @@ function game() {
     disableRestart();
     changeOutcomeTxt(playRound(playerUser, computerUser));
     updateDisplayedOutputs();
-    currentRound++; 
-    if(totalRounds >= currentRound) return;
+    currentRound++;
+    if (totalRounds >= currentRound) return;
     printGameOutcome(playerUser.wins, computerUser.wins);
     disableGame();
 }
@@ -124,7 +124,9 @@ function restartGame() {
 
 //mutating style value for pre/post game
 function prePostGame(restartBtnDisplay, disableOverlayDisplay) {
-    restartBtn.style.display = restartBtnDisplay;
+    for (let i = 0; i < restartBtns.length; i++) {
+        restartBtns[i].style.display = restartBtnDisplay;
+    }
     disableOverlayEl.style.display = disableOverlayDisplay;
     totalRoundsEl.forEach((el) => {
         el.style.display = disableOverlayDisplay;
@@ -140,14 +142,18 @@ function disableRestart() {
 }
 
 //invoked after webpage loads
-function initialize(){
+function initialize() {
     disableRestart();
     updateDisplayedOutputs();
 }
 
-restartBtn.addEventListener('click', () => {
-    restartGame();
-})
+//Add event listener to restart btns so the user can restart the game
+for (let i = 0; i < restartBtns.length; i++) {
+    restartBtns[i].addEventListener('click', () => {
+        restartGame();
+    })
+}
+
 
 for (let i = 0; i < optionButtons.length; i++) {
     optionButtons[i].addEventListener('click', function () {
