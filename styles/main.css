@@ -44,7 +44,7 @@ a, button, select {
 
 /** GAME **/
 .main {
-    background-image: url('/assets/ancient-paper.jpg');
+    background-image: url('../assets/ancient-paper.jpg');
     background-size: cover;
     min-height: calc(100vh - 50px);
     height: max-content;
